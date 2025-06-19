@@ -1,10 +1,11 @@
-import { StyledDiv, StyledNavLink, StyledTitle } from './landing.styles';
+import Title from '../../components/ui/titles/Title';
+import { StyledDiv, StyledNavLink } from './landing.styles';
 
 const Landing = () => {
 	return (
 		<>
 			<StyledDiv>
-				<StyledTitle>Encuentra tu entrenador personal</StyledTitle>
+				<Title type={'xl'}>Encuentra tu entrenador personal</Title>
 				<StyledNavLink to='/home'>Acceder</StyledNavLink>
 			</StyledDiv>
 		</>

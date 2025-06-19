@@ -11,12 +11,6 @@ const StyledDiv = styled.div`
 	padding: 1.5rem;
 `;
 
-const StyledTitle = styled.h2`
-	color: #f9ca8d;
-	font-size: 2rem;
-	text-align: center;
-`;
-
 const StyledNavLink = styled(NavLink)`
 	padding: 8px;
 	border-radius: 4px;
@@ -24,4 +18,4 @@ const StyledNavLink = styled(NavLink)`
 	margin: 4px;
 `;
 
-export { StyledNavLink, StyledTitle, StyledDiv };
+export { StyledNavLink, StyledDiv };

@@ -1,9 +1,12 @@
-import { StyledTitle } from './home.styles';
+import Menu from '../../components/menu/Menu';
+import Title from '../../components/ui/titles/Title';
 
 const Home = () => {
 	return (
 		<>
-			<StyledTitle>Tu mejor cambio, está aquí</StyledTitle>
+			<Menu />
+			<Title type={'xl'}>Tu mejor cambio, está aquí</Title>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ipsum, natus perspiciatis suscipit obcaecati beatae sit magni aliquid, nam facilis ea saepe? Aperiam at provident praesentium id fuga, similique asperiores?</p>
 		</>
 	);
 };
