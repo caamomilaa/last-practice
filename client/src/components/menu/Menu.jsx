@@ -1,18 +1,33 @@
-import { StyledDiv, StyledLi, StyledUl } from "./menu.styles"
+import { useContext } from 'react';
+import { AuthContext } from '../../lib/context/AuthContext';
+import { StyledDiv, StyledNavLink, StyledUl } from './menu.styles';
 
-const Menu = ()=>{
-return(
-    <>
-    	<nav>
-			<StyledUl>
-                <StyledDiv>
-				<StyledLi>Login</StyledLi>
-				<StyledLi>Register</StyledLi>
-                </StyledDiv>
-				<StyledLi>Profile</StyledLi>
-			</StyledUl>
-		</nav>
-    </>
-)
-}
-export default Menu
+const Menu = () => {
+	const { user } = useContext(AuthContext);
+	return (
+		<>
+			<nav>
+				<StyledUl>
+					<StyledDiv>
+						{!user && (
+							<>
+								<li>
+									<StyledNavLink to='/login'>Login</StyledNavLink>
+								</li>
+								<li>
+									<StyledNavLink to='/register'>Register</StyledNavLink>
+								</li>
+							</>
+						)}
+					</StyledDiv>
+					{user && (
+						<li>
+							<StyledNavLink to='/profile'>Profile</StyledNavLink>
+						</li>
+					)}
+				</StyledUl>
+			</nav>
+		</>
+	);
+};
+export default Menu;
