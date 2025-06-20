@@ -1,22 +1,33 @@
-import { useContext, useEffect, useState } from "react";
-import Title from "../../components/ui/titles/Title";
-import { AuthContext } from "../../lib/context/AuthContext";
+import { useContext, useEffect, useState } from 'react';
+import Title from '../../components/ui/titles/Title';
+import { AuthContext } from '../../lib/context/AuthContext';
 
 const Profile = () => {
+	const [isEditing, setIsEditing] = useState(false);
+	console.log(isEditing);
 
-	const [isEditing, setIsEditing]= useState()
-
-	useEffect(()=>{
-	},[])
-	
 	const { user } = useContext(AuthContext);
 	return (
 		<>
 			<Title type={'l'}>Profile</Title>
-			<p>Foto bonita</p>
-			<p>Name:</p>
+			{!isEditing && (
+				<>
+					<p>Foto bonita</p>
+					<p>Name:</p>
+				</>
+			)}
+			{isEditing && (
+				<>
+					<p>Foto EDIT</p>
+					<p>Name:EDIT</p>
+				</>
+			)}
+
 			{/* <p>Email: {user.email}</p> */}
-			<button onClick={setIsEditing(!isEditing)}>Editar</button>
+			<button onClick={() => setIsEditing(!isEditing)}>
+				{!isEditing && 'Editar'}
+				{isEditing && 'Guadar Cambios'}
+			</button>
 		</>
 	);
 };
